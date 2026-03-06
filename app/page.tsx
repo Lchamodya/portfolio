@@ -7,7 +7,7 @@ import { Github, ExternalLink, Mail, ArrowDown, Code2, Palette, Cpu, ChevronRigh
 const NAV_LINKS = ['Work', 'About', 'UI/UX', 'Contact'];
 
 const SKILLS = [
-  { category: 'Design', items: ['UI/UX Design', 'Figma', 'User Research', 'Prototyping', 'Design Systems', 'Wireframing'] },
+  { category: 'Design', items: ['UI/UX Design', 'Figma', 'User Research', 'Prototyping', 'Design Systems', 'Wireframing', 'Google Stitch'] },
   { category: 'Development', items: ['JavaScript', 'TypeScript', 'React', 'HTML/CSS', 'Python', 'C#'] },
   { category: 'Tools', items: ['Git & GitHub', 'Firebase', 'IoT Systems', 'Raspberry Pi', 'MySQL', 'Agile'] },
 ];
