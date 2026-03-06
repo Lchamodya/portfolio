@@ -357,10 +357,14 @@ export default function Home() {
                   github.com/Lchamodya
                   <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
-                <div className="flex items-center gap-4 text-sm text-[#1A1A1A]/50">
-                  <div className="w-10 h-10 border border-[#1A1A1A]/10 flex items-center justify-center"><Mail size={16} /></div>
-                  Available via GitHub
-                </div>
+                <a href="mailto:chamodyalochini@gmail.com"
+                  className="group flex items-center gap-4 text-sm font-medium hover:text-[#4A90D9] transition-colors">
+                  <div className="w-10 h-10 border border-[#1A1A1A]/10 flex items-center justify-center group-hover:border-[#4A90D9]/30 transition-colors">
+                    <Mail size={16} />
+                  </div>
+                  chamodyalochini@gmail.com
+                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
