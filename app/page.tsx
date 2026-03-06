@@ -15,19 +15,6 @@ const SKILLS = [
 const DEV_PROJECTS = [
   {
     id: 1,
-    title: 'Pharmic',
-    subtitle: "Bachelor's Final Year Project",
-    description: 'A comprehensive pharmacy management web application built as a final year project at the University of Plymouth. Features intuitive UI design with full CRUD operations for managing pharmaceutical inventory and prescriptions.',
-    tech: ['Angular', 'Node.js', 'MongoDB', 'Express'],
-    year: '2023',
-    university: 'University of Plymouth',
-    degree: 'BSc Software Engineering',
-    link: 'https://github.com/Lchamodya/pharmic',
-    accent: '#7CB518',
-    type: 'Academic',
-  },
-  {
-    id: 2,
     title: 'Air Quality Monitoring IoT',
     subtitle: "Master's Research Project",
     description: 'An IoT-based indoor air quality monitoring system built using Raspberry Pi Pico W and BME680 sensor. Measures temperature, humidity, pressure, and gas resistance to calculate real-time AQI. Syncs data to Firebase cloud and hosts a local HTTP server for remote monitoring.',
@@ -38,6 +25,19 @@ const DEV_PROJECTS = [
     link: 'https://github.com/Bio-Tingi/Air-Quality-Monitoring-IoT',
     accent: '#4A90D9',
     type: 'Research',
+  },
+  {
+    id: 2,
+    title: 'Pharmic',
+    subtitle: "Bachelor's Final Year Project",
+    description: 'A comprehensive pharmacy management web application built as a final year project at the University of Plymouth. Features intuitive UI design with full CRUD operations for managing pharmaceutical inventory and prescriptions.',
+    tech: ['Angular', 'Node.js', 'MongoDB', 'Express'],
+    year: '2023',
+    university: 'University of Plymouth',
+    degree: 'BSc Software Engineering',
+    link: 'https://github.com/Lchamodya/pharmic',
+    accent: '#7CB518',
+    type: 'Academic',
   },
 ];
 
