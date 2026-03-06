@@ -172,7 +172,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
             className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-[#4A90D9]" />
-            <span className="font-mono text-xs tracking-widest text-[#4A90D9] uppercase">Portfolio · 2025</span>
+            <span className="font-mono text-xs tracking-widest text-[#4A90D9] uppercase">Portfolio · 2026</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.9 }}
             className="text-[clamp(48px,8vw,120px)] font-black leading-[0.95] tracking-tight mb-8">
