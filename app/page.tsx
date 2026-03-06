@@ -18,7 +18,7 @@ const DEV_PROJECTS = [
     title: 'Pharmic',
     subtitle: "Bachelor's Final Year Project",
     description: 'A comprehensive pharmacy management web application built as a final year project at the University of Plymouth. Features intuitive UI design with full CRUD operations for managing pharmaceutical inventory and prescriptions.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+    tech: ['Angular', 'Node.js', 'MongoDB', 'Express'],
     year: '2023',
     university: 'University of Plymouth',
     degree: 'BSc Software Engineering',
