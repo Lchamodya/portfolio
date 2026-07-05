@@ -6,6 +6,21 @@ import { Github, ExternalLink, Mail, ArrowDown, Code2, Palette, Cpu, ChevronRigh
 
 const NAV_LINKS = ['Work', 'About', 'UI/UX', 'Contact'];
 
+const BADGES = [
+  {
+    id: 1,
+    name: 'Make Agentic AI Work for You',
+    image: '/badges/agentic_ai.jpeg',
+    link: 'https://www.credly.com/badges/68b0f29b-be7a-49a7-b489-b84a8a0fbbd8/public_url',
+  },
+  {
+    id: 2,
+    name: 'Responsible AI and Risk Management',
+    image: '/badges/ai_risk.jpeg',
+    link: 'https://www.credly.com/badges/eff830b7-c5ce-41cd-9ab7-ba6027a86de0/public_url',
+  },
+];
+
 const SKILLS = [
   { category: 'Design', items: ['UI/UX Design', 'Figma', 'User Research', 'Prototyping', 'Design Systems', 'Wireframing', 'Google Stitch'] },
   { category: 'Development', items: ['JavaScript', 'TypeScript', 'React', 'HTML/CSS', 'Python', 'C#'] },
@@ -166,50 +181,82 @@ export default function Home() {
 
       {/* HERO */}
       <motion.section ref={heroRef} style={{ opacity: heroOpacity, y: heroY }}
-        className="min-h-screen flex flex-col justify-end px-8 pb-20 max-w-7xl mx-auto pt-32">
-        <div className="relative">
+        className="h-screen flex flex-col px-6 md:px-8 pt-20 md:pt-32 pb-10 md:pb-20 max-w-7xl mx-auto overflow-hidden">
+
+        {/* Main content — centered on mobile, pushed to bottom on desktop */}
+        <div className="flex-1 flex flex-col justify-center md:justify-end relative">
           <div className="absolute -top-16 -left-4 text-[200px] font-black text-[#1A1A1A]/[0.03] leading-none select-none pointer-events-none">LC</div>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex items-center gap-3 mb-6">
+            className="flex items-center gap-3 mb-4 md:mb-6">
             <div className="w-8 h-px bg-[#4A90D9]" />
             <span className="font-mono text-xs tracking-widest text-[#4A90D9] uppercase">Portfolio · 2026</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.9 }}
-            className="text-[clamp(48px,8vw,120px)] font-black leading-[0.95] tracking-tight mb-8">
+            className="text-[clamp(36px,8vw,120px)] font-black leading-[0.95] tracking-tight mb-5 md:mb-8">
             Lochini<br /><span className="text-[#4A90D9]">Chamodya</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }}
-            className="flex flex-wrap gap-6 items-start justify-between">
+            className="flex gap-6 items-start justify-between">
             <div className="max-w-xl">
-              <p className="text-lg text-[#1A1A1A]/60 font-light leading-relaxed">
-                UI/UX Designer & Software Engineer from Sri Lanka,<br />
-                currently pursuing MSc in Computing Sciences at<br />
+              <p className="text-sm md:text-lg text-[#1A1A1A]/60 font-light leading-relaxed">
+                UI/UX Designer & Software Engineer from Sri Lanka,
+                currently pursuing MSc in Computing Sciences at{' '}
                 <span className="text-[#1A1A1A] font-medium">University of Vaasa, Finland.</span>
               </p>
             </div>
-            <div className="flex flex-col gap-2 font-mono text-xs tracking-widest text-[#1A1A1A]/40 uppercase">
+            <div className="hidden md:flex flex-col gap-2 font-mono text-xs tracking-widest text-[#1A1A1A]/40 uppercase text-right shrink-0">
               <span>Sri Lanka → Finland</span>
               <span>BSc Software Eng.</span>
               <span>UI/UX · Dev · IoT</span>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
-            className="mt-12 flex gap-4">
+            className="mt-6 md:mt-12 flex items-center gap-3">
             <button onClick={() => scrollTo('work')}
-              className="group flex items-center gap-2 bg-[#1A1A1A] text-[#F5F0E8] px-6 py-3 text-sm font-medium tracking-wide hover:bg-[#4A90D9] transition-colors duration-300">
+              className="group flex items-center gap-2 bg-[#1A1A1A] text-[#F5F0E8] px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide hover:bg-[#4A90D9] transition-colors duration-300">
               View Work <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <a href="https://github.com/Lchamodya" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-[#1A1A1A]/20 px-6 py-3 text-sm font-medium tracking-wide hover:border-[#1A1A1A] transition-colors duration-300">
+              className="flex items-center gap-2 border border-[#1A1A1A]/20 px-5 md:px-6 py-2.5 md:py-3 text-sm font-medium tracking-wide hover:border-[#1A1A1A] transition-colors duration-300">
               <Github size={14} /> GitHub
             </a>
+            {/* Badges inline on desktop only */}
+            <div className="hidden md:flex items-center gap-3 ml-auto">
+              {BADGES.map((badge) => (
+                <a key={badge.id} href={badge.link} target="_blank" rel="noopener noreferrer"
+                  title={badge.name}
+                  className="group w-24 h-24 overflow-hidden border border-[#1A1A1A]/10 hover:border-[#4A90D9]/50 hover:shadow-md transition-all duration-300 shrink-0">
+                  <img src={badge.image} alt={badge.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </a>
+              ))}
+            </div>
           </motion.div>
+          {/* Scroll indicator — desktop only */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-            className="mt-16 flex items-center gap-2 text-[#1A1A1A]/30">
+            className="hidden md:flex mt-16 items-center gap-2 text-[#1A1A1A]/30">
             <span className="font-mono text-xs tracking-widest">scroll</span>
             <ArrowDown size={14} className="animate-bounce" />
           </motion.div>
         </div>
+
+        {/* Mobile bottom bar — scroll left, badges right */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
+          className="md:hidden flex items-center justify-between">
+          <div className="flex items-center gap-2 text-[#1A1A1A]/30">
+            <span className="font-mono text-xs tracking-widest">scroll</span>
+            <ArrowDown size={14} className="animate-bounce" />
+          </div>
+          <div className="flex items-center gap-2">
+            {BADGES.map((badge) => (
+              <a key={badge.id} href={badge.link} target="_blank" rel="noopener noreferrer"
+                title={badge.name}
+                className="group w-20 h-20 overflow-hidden border border-[#1A1A1A]/10 hover:border-[#4A90D9]/50 hover:shadow-md transition-all duration-300 shrink-0">
+                <img src={badge.image} alt={badge.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
       </motion.section>
 
       {/* WORK */}
@@ -263,6 +310,33 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          {/* CERTIFICATIONS */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }} className="mt-16 border-t border-[#F5F0E8]/10 pt-12">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="font-mono text-xs tracking-widest text-[#F5F0E8]/40 uppercase">Certifications</span>
+              <div className="flex-1 h-px bg-[#F5F0E8]/10" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {BADGES.map((badge) => (
+                <a key={badge.id} href={badge.link} target="_blank" rel="noopener noreferrer"
+                  className="group flex items-center gap-5 border border-[#F5F0E8]/10 p-4 hover:border-[#4A90D9]/40 transition-all duration-300">
+                  <img src={badge.image} alt={badge.name}
+                    className="w-20 h-20 shrink-0 object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-[#F5F0E8] leading-snug group-hover:text-[#4A90D9] transition-colors">{badge.name}</p>
+                    <p className="mt-1 font-mono text-xs text-[#F5F0E8]/40 uppercase tracking-widest">IBM SkillsBuild</p>
+                    <div className="mt-2 inline-flex items-center gap-1 text-xs text-[#4A90D9]/70 group-hover:text-[#4A90D9] transition-colors">
+                      <span>View credential</span>
+                      <ExternalLink size={10} />
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
