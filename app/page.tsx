@@ -19,6 +19,12 @@ const BADGES = [
     image: '/badges/ai_risk.jpeg',
     link: 'https://www.credly.com/badges/eff830b7-c5ce-41cd-9ab7-ba6027a86de0/public_url',
   },
+  {
+    id: 3,
+    name: 'AI Efficiencies and Governance',
+    image: '/badges/ai-efficiencies-and-governance.png',
+    link: 'https://www.credly.com/badges/312b8b32-2a34-42f9-af2a-85964cb64351/public_url',
+  },
 ];
 
 const SKILLS = [
